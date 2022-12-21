@@ -155,7 +155,7 @@ class ProductController extends Controller
             },
         ])->where('slug',$id)->first(['id','name','images','type_cate','category','sku','discount','price','content','size','description','slug','preserve','created_at']);
         $data['goiy'] = Product::where('status',1)->limit(8)->get(['id','name','images','discount','price','slug','cate_slug','type_slug']);
-        $data['productlq'] = Product::where('category',$data['product']->category)->get(['id','name','images','discount','price','slug','cate_slug','type_slug','description']);
+        $data['productlq'] = Product::where('category',$data['product']->category)->get(['id','name','images','discount','price','slug','cate_slug','type_slug','description','category']);
         $data['news'] = Blog::where('status',1)->limit(8)->get();
         return view('product.detail',$data);
     }
