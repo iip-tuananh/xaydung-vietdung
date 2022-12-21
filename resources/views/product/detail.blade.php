@@ -48,7 +48,7 @@ $img = json_decode($product->images);
         </div>
     </div>
     @if (count($productlq) > 1)
-    <div class="row">
+    <div class="row projects">
         @foreach ($productlq as $pro)
             @if ($pro->id != $product->id)
             @php
