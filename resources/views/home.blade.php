@@ -109,11 +109,11 @@
          </div>
       </div>
       <div class="row">
-         <div class="col-md-4">
-            @foreach ($cate->product as $pro)
+         @foreach ($cate->product as $pro)
+            <div class="col-md-4">
                @include('layouts.product.item',['pro'=>$pro])
-            @endforeach
-         </div>
+            </div>
+         @endforeach
       </div>
    </div>
 </section>
