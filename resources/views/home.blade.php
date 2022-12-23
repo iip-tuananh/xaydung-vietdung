@@ -53,7 +53,7 @@
       <div class="row">
          <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
             <h2 class="section-title">Về <span>Chúng tôi</span></h2>
-            <div class="line8">{!!$gioithieu->description!!}</div>
+            <div class="">{!!$gioithieu->description!!}</div>
          </div>
          <div class="col-md-6 animate-box" data-animate-effect="fadeInUp">
             <div class="about-img">
