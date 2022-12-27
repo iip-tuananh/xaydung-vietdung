@@ -48,6 +48,100 @@
       </div>
       <!-- Footer -->
       @include('layouts.footer.index')
+      <a class="res_none btn-zalo btn-frame" target="_blank" href="https://zalo.me/{{$setting->phone1}}">
+         <div class="animated infinite zoomIn kenit-alo-circle"></div>
+         <div class="animated infinite pulse kenit-alo-circle-fill"></div>
+         <i><img src="{{url('frontend/images/zl.png')}}" alt="Zalo"></i>
+      </a>
+      <a class="res_none btn-phone btn-frame" href="tel:{{$setting->phone1}}">
+         <div class="animated infinite zoomIn kenit-alo-circle"></div>
+         <div class="animated infinite pulse kenit-alo-circle-fill"></div>
+         <i><img src="{{url('frontend/images/hl.png')}}" alt="Hotline"></i>
+      </a>
+      <style>
+         .btn-zalo {
+            bottom: 315px;
+         }
+         .btn-frame {
+            display: block;
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            right: 20px;
+            z-index: 10;
+            cursor: pointer;
+         }
+         .btn-frame .animated.infinite {
+            animation-iteration-count: infinite;
+         }
+         .btn-frame .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+         }
+         .btn-frame .zoomIn {
+            animation-name: zoomIn;
+         }
+         .btn-frame .kenit-alo-circle {
+            width: 60px;
+            height: 60px;
+            top: -5px;
+            right: -5px;
+            position: absolute;
+            background-color: transparent;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            border-radius: 100%;
+            border: 2px solid rgba(7,41,103,0.8);
+            opacity: .1;
+            border-color: #f2ce76;
+            opacity: .5;
+         }
+         .btn-frame .pulse {
+            animation-name: pulse;
+         }
+         .btn-frame .kenit-alo-circle-fill {
+            width: 70px;
+            height: 70px;
+            top: -10px;
+            right: -10px;
+            position: absolute;
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -ms-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            border-radius: 100%;
+            border: 2px solid transparent;
+            -webkit-transition: all .5s;
+            -moz-transition: all .5s;
+            -o-transition: all .5s;
+            transition: all .5s;
+            background-color: rgba(7,41,103,0.35);
+            opacity: .4;
+         }
+         .btn-frame i img {
+            vertical-align: middle;
+            width: 70%;
+         }
+         .btn-phone {
+            bottom: 230px;
+         }
+         .btn-frame i {
+            display: flex;
+            display: -ms-flex;
+            justify-content: center;
+            align-items: center;
+            -ms-flex-align: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #f2ce76;
+            position: relative;
+            z-index: 1;
+         }
+      </style>
       <!-- jQuery -->
       <script src="{{asset('frontend/js/jquery-3.5.1.min.js')}}"></script>
       <script src="{{asset('frontend/js/jquery-migrate-3.0.0.min.js')}}"></script>
