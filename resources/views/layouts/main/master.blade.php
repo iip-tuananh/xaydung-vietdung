@@ -62,15 +62,15 @@
       {{-- popup-tuvan --}}
          <button class="btn-tuvan" data-toggle="modal" data-target="#popuptuvan">Đăng ký tư vấn</button>
          <div class="modal fade" id="popuptuvan" tabindex="-1" role="dialog" aria-labelledby="popuptuvanTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
+            <div class="modal-dialog" role="document" style="top: 100px;">
+            <div class="modal-content">
+               <div class="modal-header">
                   <h5 class="modal-title" id="popuptuvanTitle">TƯ VẤN THIẾT KẾ</h5>
                   <button type="button" class="close btn-close-white" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                  <span aria-hidden="true">&times;</span>
                   </button>
-                </div>
-                <div class="modal-body">
+               </div>
+               <div class="modal-body">
                   <form action="{{route('postcontact')}}" method="post">
                      @csrf
                      <div class="form-group">
@@ -241,13 +241,13 @@
                         <input name="submit" type="submit" value="Yêu cầu tư vấn">
                      </div>
                   </form>
-                </div>
+               </div>
 
-              </div>
             </div>
-          </div>
-    {{-- END POPUP --}}
-    <style>
+            </div>
+         </div>
+      {{-- END POPUP --}}
+      <style>
          .btn-tuvan{
             outline: 0 !important;
             bottom: 315px;
