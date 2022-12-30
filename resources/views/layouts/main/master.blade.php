@@ -30,6 +30,7 @@
       <link rel="icon" href="{{url(''.$setting->favicon)}}" type="image/x-icon" />
       <link rel="stylesheet" href="{{asset('frontend/css/plugins.css')}}" />
       <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}" />
+      @yield('css')
    </head>
    <body>
       <!-- Preloader -->
@@ -363,5 +364,6 @@
       <script src="{{asset('frontend/js/before-after.js')}}"></script>
       <script src="{{asset('frontend/js/vegas.slider.min.js')}}"></script>
       <script src="{{asset('frontend/js/custom.js')}}"></script>
+      @yield('js')
    </body>
 </html>

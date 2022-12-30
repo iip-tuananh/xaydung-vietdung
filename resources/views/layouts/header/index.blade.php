@@ -2,6 +2,34 @@
 <div class="container">
     <!-- Logo -->
     <a class="logo" href="{{route('home')}}"> <img src="{{$setting->logo}}" alt="{{$setting->company}}"> </a>
+    {{-- Menu mobile --}}
+    <ul class="c-menu-mobile">
+        @foreach ($categoryhome as $cate)
+            <li class="nav-item dropdown menu-item"> <a href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}" class="nav-link"> {{languageName($cate->name)}} 
+                @if (count($cate->typeCate) > 0)
+                <i class="ti-angle-down"></i>
+                @endif
+            </a>
+                @if (count($cate->typeCate) > 0)
+                    <ul class="dropdown-menu last">
+                        @foreach ($cate->typeCate as $type)
+                        <li class="dropdown-item"><a href="{{route('allListType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug])}}">{{languageName($type->name)}}</a></li>
+                        @endforeach
+                    </ul>
+                @endif
+            </li>
+            @endforeach
+    </ul>
+        <style>
+            .c-menu-mobile{
+                display: flex;
+            }
+            @media only screen and (min-width: 991px) {
+                .c-menu-mobile{
+                display: none;
+            }
+            }   
+        </style>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="icon-bar"><i class="ti-menu-alt"></i></span> </button>
     <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">

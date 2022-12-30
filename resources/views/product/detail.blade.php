@@ -14,6 +14,8 @@ $img = json_decode($product->images);
 @section('css')
 @endsection
 @section('js')
+<script src="{{asset('frontend/js/main.js')}}"></script>
+<script src="{{asset('frontend/js/zoom.js')}}"></script>
 @endsection
 @section('content')
 <section class="content-lines-wrapper">
