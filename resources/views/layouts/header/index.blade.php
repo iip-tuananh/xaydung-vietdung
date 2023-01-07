@@ -5,20 +5,28 @@
     {{-- Menu mobile --}}
     <ul class="c-menu-mobile">
         @foreach ($categoryhome as $cate)
-            <li class="nav-item dropdown menu-item"> <a href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}" class="nav-link"> {{languageName($cate->name)}} 
-                @if (count($cate->typeCate) > 0)
-                <i class="ti-angle-down"></i>
-                @endif
-            </a>
-                @if (count($cate->typeCate) > 0)
-                    <ul class="dropdown-menu last">
+          <li class="nav-item">
+                <a class="nav-link dropdown" href="#">
+                    <a class="nav-link d-inline" href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}">{{languageName($cate->name)}}
+                        @if (count($cate->typeCate) > 0)
+                            <a href="#" class="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="ti-angle-down"></i>
+                            </a>
+                        @endif
+                    </a>
+                    @if (count($cate->typeCate) > 0)
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach ($cate->typeCate as $type)
-                        <li class="dropdown-item"><a href="{{route('allListType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug])}}">{{languageName($type->name)}}</a></li>
+                        <li class="dropdown-item" >
+                            <a href="{{route('allListType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug])}}">{{languageName($type->name)}}</a>
+                        </li>
                         @endforeach
                     </ul>
-                @endif
-            </li>
-            @endforeach
+                    @endif
+                </a>
+            </li>  
+        @endforeach
+        
     </ul>
         <style>
             .c-menu-mobile{
@@ -43,24 +51,36 @@
                 </ul>
             </li>
             @foreach ($categoryhome as $cate)
-            <li class="nav-item dropdown menu-item"> <a href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}" class="nav-link"> {{languageName($cate->name)}} 
-                @if (count($cate->typeCate) > 0)
-                <i class="ti-angle-down"></i>
-                @endif
-            </a>
-                @if (count($cate->typeCate) > 0)
-                    <ul class="dropdown-menu last">
-                        @foreach ($cate->typeCate as $type)
-                        <li class="dropdown-item"><a href="{{route('allListType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug])}}">{{languageName($type->name)}}</a></li>
-                        @endforeach
-                    </ul>
-                @endif
-            </li>
+                <li class="nav-item">
+                        <a class="nav-link dropdown menu-item" href="#">
+                            <a class="nav-link d-inline" href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}">{{languageName($cate->name)}}
+                                @if (count($cate->typeCate) > 0)
+                                    <a href="#" class="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="ti-angle-down"></i>
+                                    </a>
+                                @endif
+                            </a>
+                            @if (count($cate->typeCate) > 0)
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @foreach ($cate->typeCate as $type)
+                                <li class="dropdown-item" >
+                                    <a href="{{route('allListType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug])}}">{{languageName($type->name)}}</a>
+                                </li>
+                                @endforeach
+                            </ul>
+                            @endif
+                        </a>
+                    </li>  
             @endforeach
-            <li class="nav-item dropdown menu-item"> <a href="{{route('allListBlog')}}" class="nav-link"> Tư vấn <i class="ti-angle-down"></i></a>
-                <ul class="dropdown-menu last">
+            <li class="nav-item  menu-item">
+                <a href="{{route('allListBlog')}}" class="nav-link d-inline">Tư vấn
+                    <a href="#" class="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="ti-angle-down"></i>
+                    </a>
+                </a>
+                <ul class="dropdown-menu last" aria-labelledby="navbarDropdown">
                     @foreach ($blogCate as $cate)
-                    <li class="dropdown-item"><a href="{{route('listCateBlog',['slug'=>$cate->slug])}}">{{languageName($cate->name)}}</a></li>
+                        <li class="dropdown-item"><a href="{{route('listCateBlog',['slug'=>$cate->slug])}}">{{languageName($cate->name)}}</a></li>
                     @endforeach
                 </ul>
             </li>

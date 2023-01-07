@@ -4714,7 +4714,7 @@ hr.border-2 {
 
     .navbar .logo {
         text-align: left;
-        width: 100px;
+        width: 20%;
         margin-left: 15px;
     }
 
@@ -4753,7 +4753,8 @@ hr.border-2 {
     }
 
     .navbar .nav-link {
-        margin: 0 auto !important
+        margin: 0 auto !important;
+        padding-right: 3px;
     }
 
     .dropdown-menu .dropdown-item,
@@ -4772,7 +4773,10 @@ hr.border-2 {
 
     .dropdown-menu {
         -webkit-transform: translateY(0);
-        transform: translateY(0)
+        transform: translateY(0);
+        width: max-content;
+        left: auto;
+        top: auto;
     }
 
     .dropdown-menu .sub-menu {
